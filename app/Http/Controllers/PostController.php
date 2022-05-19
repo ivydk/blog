@@ -17,7 +17,7 @@ class PostController extends Controller
      */
     public function index(): View|Factory|Application
     {
-        $posts = Post::orderBy('created_at', 'desc');
+        $posts = Post::all();
 
         return view('posts.index', compact('posts'));
     }
