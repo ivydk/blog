@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('/posts', PostController::class);
+
 /*
 |--------------------------------------------------------------------------
 | Admin Routes
@@ -28,7 +32,7 @@ Route::get('/', function () {
 |
 */
 Route::middleware(['admin'])->group(function () {
-    Route::get('/admin_dashboard', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin_dashboard');
+    Route::get('/admin_dashboard', [AdminController::class, 'index'])->name('admin_dashboard');
 });
 
 
