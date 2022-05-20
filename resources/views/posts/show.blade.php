@@ -4,8 +4,9 @@
                     <div class=" overflow-hidden sm:rounded-lg">
                         <div class="p-6  border-gray-200">
                             <h1 class="text-8xl font-semibold">{{ $post->title }}</h1>
-                            <p class="text-lg font-semibold"> {{ $post->excerpt }}</p>
-                            <p class="pt-6"> {{ $post->body }}</p>
+                            <p class="text-l"> {{ $post->user->name }} - {{ $post->created_at }}</p>
+                            <p class="text-xl font-semibold pt-4"> {{ $post->excerpt }}</p>
+                            <p class="pt-3"> {{ $post->body }}</p>
 
                             {{--  If user made this post ther will be a edit button  --}}
                             @can('update', $post)

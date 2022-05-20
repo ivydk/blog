@@ -126,7 +126,8 @@ class PostController extends Controller
         return request()->validate([
             'title' => ['required'],
             'excerpt' => ['required'],
-            'body' => ['required']
+            'body' => ['required'],
+            'user_id' => ['required']
         ]);
     }
 }

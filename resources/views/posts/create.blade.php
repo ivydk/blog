@@ -8,6 +8,7 @@
                         <x-form-input name="title" label="Title" v-on:submit="checkForm"/>
                         <x-form-textarea name="excerpt" label="Excerpt" v-on:submit="checkForm" />
                         <x-form-textarea name="body" label="Body" v-on:submit="checkForm"/>
+                        <x-form-input name="user_id" label="user_id" v-on:submit="checkForm" value="{{ Auth::user()->id}}" type="hidden"/>
                         <x-form-submit />
                     </x-form>
                 </div>
