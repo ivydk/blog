@@ -4,10 +4,23 @@ namespace App\Http;
 
 use App\Http\Middleware\AdminAUthenticated;
 use App\Http\Middleware\UserAuthenticated;
+use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
 {
+
+    /**
+     * Define the application's command schedule.
+     *
+     * @param Schedule $schedule
+     * @return void
+     */
+    protected function schedule(Schedule $schedule)
+    {
+        $schedule->command('auth:clear-resets')->everyFifteenMinutes();
+    }
+
     /**
      * The application's global HTTP middleware stack.
      *
