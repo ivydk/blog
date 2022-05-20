@@ -10,8 +10,8 @@ class HomeController extends Controller
     public function index()
     {
         return match (Auth::user()->role) {
-            "user" => redirect('/dashboard'),
-            "admin" => redirect('/dashboard'),
+            "user" => redirect('/user_dashboard'),
+            "admin" => redirect('/admin_dashboard'),
             default => 403,
         };
     }
