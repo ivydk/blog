@@ -9,8 +9,10 @@
                                 <h1 class="font-semibold text-lg">{{ $post->title }}</h1>
                                 <p> {{ $post->excerpt }}</p>
                             </div>
+                            <div>
                             @can('delete', $post)
                                 <div>
+
                                     <form method="POST" action="{{route('posts.destroy', $post)}}">
                                         @csrf
                                         @method('DELETE')
@@ -29,6 +31,7 @@
                                     </button>
                                 </a>
                             @endcan
+                            </div>
                         </div>
                     </div>
                 </a>
