@@ -18,9 +18,10 @@ class PostController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function personalIndex(): View|Factory|Application
+    public function myIndex(): View|Factory|Application
     {
-        $posts = Post::orderBy('created_at', 'desc')->get();
+        $id = auth()->user()->id;
+        $posts = Post::where('user_id', $id)->get();
 
         return view('posts.index', compact('posts'));
     }
@@ -79,6 +80,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+        $this->authorize('update', $post);
+
         return view('posts.edit', compact('post'));
     }
 
@@ -91,8 +94,11 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $post->update($this->validatedPost($request));
+
+        return redirect(route('posts.show', $post));
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -102,6 +108,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post): Redirector|RedirectResponse|Application
     {
+        $this->authorize('update', $post);
+
         $post->delete();
 
         return redirect(route('posts.index'));
