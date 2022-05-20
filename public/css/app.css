@@ -628,6 +628,9 @@ select {
 .m-2 {
   margin: 0.5rem;
 }
+.m-6 {
+  margin: 1.5rem;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -749,6 +752,9 @@ select {
 .w-6 {
   width: 1.5rem;
 }
+.w-24 {
+  width: 6rem;
+}
 .max-w-xl {
   max-width: 36rem;
 }
@@ -812,6 +818,9 @@ select {
 }
 .items-center {
   align-items: center;
+}
+.justify-start {
+  justify-content: flex-start;
 }
 .justify-end {
   justify-content: flex-end;

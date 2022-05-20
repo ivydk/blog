@@ -30,7 +30,7 @@
                             <x-dropdown-link :href="route('posts.index')" :active="request()->routeIs('posts.index')">
                                 {{ __('All posts') }}
                             </x-dropdown-link>
-                            <x-dropdown-link :href="route('posts.index')" :active="request()->routeIs('posts.index')" >
+                            <x-dropdown-link :href="route('my_posts')" :active="request()->routeIs('my_posts')" >
                                 {{ __('My posts') }}
                             </x-dropdown-link>
                             <x-dropdown-link :href="route('posts.create')" :active="request()->routeIs('posts.create')">

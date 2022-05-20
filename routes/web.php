@@ -27,6 +27,8 @@ Route::get('/', function () {
 });
 
 Route::resource('posts', PostController::class);
+Route::get('my_posts', [PostController::class, 'myIndex'])->name('my_posts');
+
 
 // handles redirect after authentication
 Route::group(['middleware' => ['auth']], function () {
