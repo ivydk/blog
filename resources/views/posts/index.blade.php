@@ -10,13 +10,24 @@
                                 <p> {{ $post->excerpt }}</p>
                             </div>
                             @can('delete', $post)
-                            <div>
-                                <form method="POST" action="{{route('posts.destroy', $post)}}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-cyan-400 dark:focus:ring-cyan-700 dark:border-cyan-700">Delete</button>
-                                </form>
-                            </div>
+                                <div>
+                                    <form method="POST" action="{{route('posts.destroy', $post)}}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit"
+                                                class="text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-cyan-400 dark:focus:ring-cyan-700 dark:border-cyan-700">
+                                            Delete
+                                        </button>
+                                    </form>
+                                </div>
+                            @endcan
+                            @can('update', $post)
+                                <a href="{{ route('posts.edit', $post) }}">
+                                    <button type="button"
+                                            class="text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-cyan-400 dark:focus:ring-cyan-700 dark:border-cyan-700 mt-6">
+                                        Edit
+                                    </button>
+                                </a>
                             @endcan
                         </div>
                     </div>
