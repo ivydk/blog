@@ -16,6 +16,6 @@ class AdminController extends Controller
      */
     public function index(Request $request)
     {
-        return view('dashboard');
+        return view('\dashboard');
     }
 }
