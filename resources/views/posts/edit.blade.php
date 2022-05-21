@@ -6,6 +6,7 @@
                 <div class="p-6  border-gray-200">
                     <h1 class="text-4xl font-semibold">Edit {{ $post->title }}</h1>
                     <x-form :action="route('posts.store')">
+                        <x-form-input name="user_id" label="user_id" v-on:submit="checkForm" value="{{ \Illuminate\Support\Facades\Auth::user()->id }}" type="hidden"/>
                         <x-form-input name="title" label="Title" v-on:submit="checkForm" value="{{$errors->any() ? old('title') : $post->title }}"/>
                         <x-form-textarea name="excerpt" label="Excerpt" v-on:submit="checkForm" default="{{$errors->any() ? old('excerpt') : $post->excerpt }}"/>
                         <x-form-textarea name="body" label="Body" v-on:submit="checkForm" default="{{$errors->any() ? old('body') : $post->body }}"/>
