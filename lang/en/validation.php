@@ -31,8 +31,10 @@ return [
         'string' => 'The :attribute must be between :min and :max characters.',
     ],
     'boolean' => 'The :attribute field must be true or false.',
+    // TODO: more password error messages
     'confirmed' => 'The :attribute confirmation does not match.',
     'current_password' => 'The password is incorrect.',
+
     'date' => 'The :attribute is not a valid date.',
     'date_equals' => 'The :attribute must be a date equal to :date.',
     'date_format' => 'The :attribute does not match the format :format.',
@@ -101,6 +103,7 @@ return [
     'not_regex' => 'The :attribute format is invalid.',
     'numeric' => 'The :attribute must be a number.',
     'password' => [
+        // TODO: change password validation errors
         'letters' => 'The :attribute must contain at least one letter.',
         'mixed' => 'The :attribute must contain at least one uppercase and one lowercase letter.',
         'numbers' => 'The :attribute must contain at least one number.',
