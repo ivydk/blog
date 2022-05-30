@@ -10,7 +10,6 @@
                     @else
                     user.
                     @endif
-                        TEST
                     </p>
                 </div>
             </div>
