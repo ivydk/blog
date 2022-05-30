@@ -128,6 +128,10 @@ class PostController extends Controller
             'excerpt' => ['required'],
             'body' => ['required'],
             'user_id' => ['required']
+        ],
+        [
+            // Put the custom error messages here
+           'title.required' =>'You have to fill in a title!'
         ]);
     }
 }
