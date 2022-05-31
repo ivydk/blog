@@ -6,7 +6,6 @@
             </a>
         </x-slot>
 
-        <!-- Validation Errors -->
         <form method="POST" action="{{ route('register') }}">
         @csrf
 
