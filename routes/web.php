@@ -31,10 +31,6 @@ Route::get('/', function () {
     }
 });
 
-// profile page
-Route::get('profile', [UserController::class, 'profile'])->name('profile');
-Route::post('profile', [UserController::class, 'update_avatar']);
-
 
 /*
 |--------------------------------------------------------------------------
