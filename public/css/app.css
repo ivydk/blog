@@ -834,6 +834,9 @@ select {
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
+.flex-row {
+  flex-direction: row;
+}
 .flex-col {
   flex-direction: column;
 }
@@ -1036,6 +1039,9 @@ select {
 .pb-1 {
   padding-bottom: 0.25rem;
 }
+.pr-8 {
+  padding-right: 2rem;
+}
 .text-center {
   text-align: center;
 }
@@ -1234,6 +1240,9 @@ select {
 #avatar {
     height: 90px;
     width: 90px;
+}
+.profile-table-first-row {
+    padding-right: 10px;
 }
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
