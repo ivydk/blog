@@ -2,7 +2,8 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-#avatar {
+#avatar-profile-page {
+    object-fit:cover;
     height: 90px;
     width: 90px;
 }
