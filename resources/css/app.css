@@ -7,6 +7,12 @@
     height: 90px;
     width: 90px;
 }
+#avatar-nav-bar {
+    object-fit:cover;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
 
 .profile-table-first-row {
     padding-right: 10px;
