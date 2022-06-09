@@ -18,6 +18,3 @@ As a user you are restricted to some routes.
 - Can view all posts (index and show)
 - Can edit only their own posts
 - Can create new posts
-
-## Snooping & Session hijacking
-To prevent snooping and session hijacking I used HTTPS, I defined this in the [AppServiceProvider](app/Providers/AppServiceProvider.php) 
