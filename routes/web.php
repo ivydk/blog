@@ -1,16 +1,12 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GoogleLoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
-use Illuminate\Auth\Events\PasswordReset;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +31,11 @@ Route::get('/', function () {
 Route::get('profile', [UserController::class, 'profile'])->name('profile');
 Route::post('profile', [UserController::class, 'update_avatar']);
 
+// Google routes
+Route::prefix('google')->name('google.')->group(function () {
+    Route::get('login', [GoogleLoginController::class, 'login'])->name('login');
+    Route::any('callback', [GoogleLoginController::class, 'googleCallback'])->name('callback');
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +44,6 @@ Route::post('profile', [UserController::class, 'update_avatar']);
 */
 Route::resource('posts', PostController::class);
 Route::get('my_posts', [PostController::class, 'myIndex'])->name('my_posts');
-
 
 
 /*
