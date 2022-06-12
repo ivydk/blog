@@ -33,6 +33,6 @@ return [
     'google' => [
         'client_id' => '189235119064-6tugrjr7gj0cmthqe5j77vntval374hc.apps.googleusercontent.com',
         'client_secret' => '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s',
-        'redirect' => 'https://0a41-106-212-124-50.ngrok.io/google/callback/'
+        'redirect' => 'https://blog-ivy.herokuapp.com/google/callback/'
     ],
 ];

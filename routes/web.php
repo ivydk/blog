@@ -31,7 +31,7 @@ Route::get('/', function () {
 Route::get('profile', [UserController::class, 'profile'])->name('profile');
 Route::post('profile', [UserController::class, 'update_avatar']);
 
-// Google routes
+// google login page
 Route::prefix('google')->name('google.')->group(function () {
     Route::get('login', [GoogleLoginController::class, 'login'])->name('login');
     Route::any('callback', [GoogleLoginController::class, 'googleCallback'])->name('callback');
@@ -39,7 +39,7 @@ Route::prefix('google')->name('google.')->group(function () {
 
 /*
 |--------------------------------------------------------------------------
-| Posts routes
+| Posts Routes
 |--------------------------------------------------------------------------
 */
 Route::resource('posts', PostController::class);
@@ -48,7 +48,7 @@ Route::get('my_posts', [PostController::class, 'myIndex'])->name('my_posts');
 
 /*
 |--------------------------------------------------------------------------
-| Redirect after login
+| After login redirects
 |--------------------------------------------------------------------------
 */
 Route::group(['middleware' => ['auth']], function () {

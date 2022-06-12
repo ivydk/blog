@@ -32,6 +32,12 @@ class UserController extends Controller
         return view('users.profile', ['user' => Auth::user()]);
     }
 
+    /**
+     * Update the avatar resource in storage.
+     *
+     * @param Request $request
+     * @return Application|Factory|View
+     */
     public function update_avatar(Request $request)
     {
         if($request->hasFile('avatar')){
