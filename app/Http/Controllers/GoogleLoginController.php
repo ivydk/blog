@@ -23,7 +23,7 @@ class GoogleLoginController extends Controller
     /**
      * @return RedirectResponse|\Illuminate\Http\RedirectResponse
      */
-    public function googleCallback()
+    public function googleCallback(): RedirectResponse|\Illuminate\Http\RedirectResponse
     {
         $user = Socialite::driver('google')->user();
 
@@ -34,6 +34,7 @@ class GoogleLoginController extends Controller
             $saveUser = User::updateOrCreate([
                 'google_id' => $user->getId(),
             ], [
+                'role' => 'user',
                 'name' => $user->getName(),
                 'email' => $user->getEmail(),
                 'password' => Hash::make($user->getName() . '@' . $user->getId())
@@ -49,7 +50,7 @@ class GoogleLoginController extends Controller
 
         Auth::loginUsingId($saveUser->id);
 
-        return redirect()->route('home');
+        return redirect()->route('redirects');
     }
 
 }

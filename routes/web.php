@@ -34,7 +34,7 @@ Route::post('profile', [UserController::class, 'update_avatar']);
 // google login page
 Route::prefix('google')->name('google.')->group(function () {
     Route::get('login', [GoogleLoginController::class, 'login'])->name('login');
-    Route::any('callback', [GoogleLoginController::class, 'googleCallback'])->name('callback');
+    Route::get('callback', [GoogleLoginController::class, 'googleCallback'])->name('callback');
 });
 
 /*

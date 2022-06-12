@@ -30,10 +30,12 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    // google login credentials from https://console.developers.google.com/apis/credentials (create credentials)
     'google' => [
-        'client_id' => '189235119064-6tugrjr7gj0cmthqe5j77vntval374hc.apps.googleusercontent.com',
-        'client_secret' => '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s',
-        'redirect' => 'https://blog-ivy.herokuapp.com/google/callback/',
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+//        'redirect' => 'https://blog-ivy.herokuapp.com/google/callback/',
+        'redirect' => 'http://blog.com/google/callback/',
         'domain' => env('SESSION_DOMAIN', 'https://blog-ivy.herokuapp.com'),
     ],
 ];
