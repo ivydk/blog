@@ -34,8 +34,6 @@ return [
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-//        'redirect' => 'https://blog-ivy.herokuapp.com/google/callback/',
-        'redirect' => 'http://blog.com/google/callback/',
-        'domain' => env('SESSION_DOMAIN', 'https://blog-ivy.herokuapp.com'),
+        'redirect' => env('GOOGLE_REDIRECT'),
     ],
 ];
