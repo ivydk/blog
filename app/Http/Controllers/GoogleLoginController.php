@@ -13,10 +13,11 @@ class GoogleLoginController extends Controller
     /**
      * Redirect the user to the Google authentication page.
      *
-     * @return RedirectResponse|\Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
     public function login(): RedirectResponse|\Illuminate\Http\RedirectResponse
     {
+        // If user is authenticated it will redirect to HOME, if not it will go to the login page
         return Socialite::driver('google')->redirect();
     }
 
@@ -52,5 +53,6 @@ class GoogleLoginController extends Controller
 
         return redirect()->route('redirects');
     }
+
 
 }
